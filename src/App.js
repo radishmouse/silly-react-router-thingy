@@ -8,6 +8,7 @@ import {
   Link                     // Changes the URL so the Router sees it
 } from 'react-router-dom';
 
+import NavBar from './NavBar';
 import Home from './Home';
 import About from './About';
 import Cats from './Cats';
@@ -17,11 +18,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/cats">Cats</Link></li>
-          </ul>
+          <NavBar />
           <Route path="/" exact component={Home} />
           <Route path="/about" component={About} />
           <Route path="/cats" component={Cats} />
