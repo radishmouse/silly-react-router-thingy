@@ -42,20 +42,32 @@ class App extends Component {
           'the couch'
         ]
       },
-      dogToys: {
-        'Skyler': [
-          'tennis balls',
-          'shoes'
-        ],
-        'Leroy': [
-          'mr squeaky',
-          'shoes'
-        ],
-        'Ladybird': [
-          'martinis',
-          'self-loathing'
-        ],
-        'Judge': []
+      dogs: {
+        'Skyler': {
+          'owner': 'Evan',
+          'toys': [
+            'tennis balls',
+            'shoes'
+          ]
+        },
+        'Leroy': {
+          'owner': 'Ian',
+          'toys': [
+            'mr squeaky',
+            'shoes'
+          ]
+        },
+        'Ladybird': {
+          'owner': 'Hank',
+          'toys': [
+            'martinis',
+            'self-loathing'
+          ]
+        },
+        'Judge': {
+          'owner': 'Clare',
+          'toys': []
+        }
       }
     };
   }
@@ -83,7 +95,7 @@ class App extends Component {
           }} />
           {/* <Route path="/dogs" component={Dogs} /> */}
           <Route path="/dogs" render={(props) => {
-            return (<Dogs dogList={Object.keys(this.state.dogToys)} {...props} />);
+            return (<Dogs dogList={Object.keys(this.state.dogs)} {...props} />);
           }} />
         </div>
       </Router>
