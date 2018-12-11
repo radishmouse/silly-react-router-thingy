@@ -4,21 +4,31 @@ import { Link } from 'react-router-dom';
 const Dogs = (props) => {
 
     const dogListItems = props.dogList.map((dogName, index) => {
+        const dogLinkPath = `/dogs/${dogName}`;
         return (
-            <li key={index}>
-                <Link to={`/dogs/${dogName}`}>{dogName}</Link>
+            <li key={index}>                
+                <Link to={dogLinkPath}>{dogName}</Link>
             </li>
         );
     });
 
     return (
-        <div>
+        <React.Fragment>
             <h1>DAGS</h1>
             <ul>
                 {dogListItems}
             </ul>
-        </div>
+        </React.Fragment>  
     );
+
+    // return (
+    //     React.createElement('div', null, 
+    //         React.createElement('h1', null, 'DAGS'),
+    //         React.createElement('ul', null, dogListItems)
+    //     )
+    // )
+
+
 };
 
 export default Dogs;
